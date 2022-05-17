@@ -1,14 +1,30 @@
-﻿namespace Common
+﻿using Common.Helpers;
+using System;
+
+namespace Common
 {
+    [SerializableAttribute]
     public class Drone
     {
-        public string Name { get; set; }
+        public string ComputerId { get; set; }
+        public string HostName { get; set; }       
+        public string UserName { get; set; }
         public string Ip { get; set; }
+        public string OsVersion { get; set; }
 
-        public Drone(string name, string ip)
+        public Drone(string ip)
         {
-            Name = name;
             Ip = ip;
+            ComputerId = Helpers.Common.GetComputerId();
+            HostName = Network.GetHostName();
+            UserName = Environment.UserName;
+            OsVersion = Environment.OSVersion.VersionString;
+        }
+
+        override
+        public string ToString()
+        {
+            return "Hostname : " + HostName + " - Username : " + UserName;
         }
     }
 }

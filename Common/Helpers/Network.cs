@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Net;
 using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Common
+namespace Common.Helpers
 {
-    public class Helpers
+    public static class Network
     {
-        public static string GetComputerId()
+        public static string GetMacAddress()
         {
             foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
             {
@@ -19,6 +15,11 @@ namespace Common
                 }
             }
             return null;
+        }
+
+        public static string GetHostName()
+        {
+            return Dns.GetHostName();
         }
     }
 }

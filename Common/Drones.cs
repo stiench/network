@@ -21,11 +21,11 @@ namespace Common
             return _instance;
         }
 
-        public void Add(string key, string ip)
+        public void Add(Drone drone)
         {
-            if (!_drones.ContainsKey(key))
+            if (!_drones.ContainsKey(drone.HostName))
             {
-                _drones.Add(key, new Drone(key, ip));
+                _drones.Add(drone.HostName, drone);
             }
         }
     }

@@ -45,11 +45,15 @@
     <Compile Include="Config.cs" />
     <Compile Include="Drone.cs" />
     <Compile Include="Drones.cs" />
-    <Compile Include="Helpers.cs" />
+    <Compile Include="Helpers\Common.cs" />
+    <Compile Include="Helpers\Network.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TCPClient.cs" />
-    <Compile Include="TCPServer.cs" />
-    <Compile Include="UDP.cs" />
+    <Compile Include="NetMessage.cs" />
+    <Compile Include="TCP\StateObject.cs" />
+    <Compile Include="TCP\TCPClient.cs" />
+    <Compile Include="TCP\TCPServer.cs" />
+    <Compile Include="UDP\UDPSender.cs" />
+    <Compile Include="UDP\UDPListener.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
