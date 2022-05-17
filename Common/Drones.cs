@@ -23,9 +23,9 @@ namespace Common
 
         public void Add(Drone drone)
         {
-            if (!_drones.ContainsKey(drone.HostName))
+            if (!_drones.ContainsKey(drone.ComputerId))
             {
-                _drones.Add(drone.HostName, drone);
+                _drones.Add(drone.ComputerId, drone);
             }
         }
     }
